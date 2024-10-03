@@ -6,6 +6,7 @@ interface UnitProps {
     tags?: string;
     description: string;
 }
+
 function Unit({name, points, tags, description}: UnitProps) {
     return (
         <div>
