@@ -1,15 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 
-interface UnitProps {
+export interface UnitProps {
     name: string;
     points: number;
     tags?: string;
     description: string;
 }
 
-function Unit({name, points, tags, description}: UnitProps) {
+const Unit: FC<UnitProps> = ({name, points, tags, description}: UnitProps) => {
     return (
-        <div>
+        <div key={name}>
             <h2>{name}</h2>
             <h3>{points}</h3>
             {tags != "" && 
