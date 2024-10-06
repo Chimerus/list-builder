@@ -19,7 +19,7 @@ function UnitCatalog() {
 
     return (
         <div>
-            <h1>Unit Catalog</h1>
+            <h1 className="text-2xl font-bold">Unit Catalog</h1>
             {demoCatalog.map(unit => {
                 return (
                     Unit(unit)
