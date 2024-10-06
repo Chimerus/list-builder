@@ -9,7 +9,7 @@ export interface UnitProps {
 
 const Unit: FC<UnitProps> = ({name, points, tags, description}: UnitProps) => {
     return (
-        <div key={name}>
+        <div key={name} className="border border-gray-300 rounded-lg bg-gray-50 m-2">
             <h2>{name}</h2>
             <h3>{points}</h3>
             {tags != "" && 
