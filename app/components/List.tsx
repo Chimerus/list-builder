@@ -17,7 +17,14 @@ const List = () => {
         <div>
             <h3 className="text-2xl font-bold">Current List</h3>
             <h2 className="text-xl font-bold">{list.listName}</h2>
-            <div className="mb-6">
+            <button 
+                data-collapse-target="collapse"
+                className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                type="button"
+            >
+                Edit List Name
+            </button>
+            <div className="block h-0 w-full basis-full overflow-hidden transition-all duration-300 ease-in-out" data-collapse="collapse">
                 <label htmlFor="name-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter a List name</label>
                 <input 
                     type="text" 
@@ -26,6 +33,12 @@ const List = () => {
                     value={list.listName}
                     onChange={handleChange}
                 />
+            </div>
+            <div tabIndex={0} className="collapse bg-base-200">
+                <div className="collapse-title text-xl font-medium">Focus me to see content</div>
+                <div className="collapse-content">
+                    <p>tabindex={0} attribute is necessary to make the div focusable</p>
+                </div>
             </div>
             {list.listUnits.map(unit => (
                 Unit(unit)
